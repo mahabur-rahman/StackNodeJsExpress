@@ -1,5 +1,5 @@
 {
-    "name": "expressrouter",
+    "name": "contactapp",
     "version": "1.0.0",
     "description": "",
     "main": "app.js",
@@ -11,6 +11,10 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
-        "express": "^4.17.2"
+        "express": "^4.17.2",
+        "morgan": "^1.10.0"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.15"
     }
 }
