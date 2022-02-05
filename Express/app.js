@@ -11,14 +11,19 @@ app.get("/contact", (req, res) => {
 });
 
 app.get("/", (req, res) => {
-  res.send("<h1>Hello Mahabur</h1>");
+  // res.send("<h1>Hello Mahabur</h1>");
+  res.json({
+    name: "mahabur",
+    age: 27,
+    city: "Dhaka",
+  });
 });
+
+// 404 page
 
 app.get("*", (req, res) => {
   res.send("<h1>404, Not found page</h1>");
 });
-
-// 404 page
 
 app.listen(port, () => {
   console.log(`Server is running at http://localhost:${port}`);
