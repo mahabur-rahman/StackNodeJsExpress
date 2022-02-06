@@ -1,0 +1,44 @@
+<%- include('../partials/metatop.ejs', {pageTitle : "Home Page"}) %>
+
+    <%- include('../partials/Navbar') %>
+
+        <h1>
+            <%= title %>
+                <%= title2 %>
+
+        </h1>
+        <p>Lorem ipsum dolor sit to show on browser. Lorem ipsum dolor sit to show on browser Lorem ipsum dolor sit to show on browser</p>
+
+        <strong>
+        <%= new Date().toString() %>
+    </strong>
+        <hr>
+
+        <% if(post.published) { %>
+            <h1>Title :
+                <%= post.title %>
+            </h1>
+            <p>
+                <%= post.body %>
+            </p>
+
+            <% } else { %>
+                <h3>Post is not yet published</h3>
+                <% } %>
+
+
+
+                    <hr>
+
+                    <ul>
+                        <% for (let p of posts) { %>
+
+                            <li>
+                                <%= p.title %> By
+                                    <%= p.author %>
+                            </li>
+
+                            <% } %>
+                    </ul>
+
+                    <%- include('../partials/metaend.ejs') %>
