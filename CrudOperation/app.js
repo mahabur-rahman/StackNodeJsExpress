@@ -2,38 +2,38 @@ const express = require("express");
 const morgan = require("morgan");
 const app = express();
 const mongoose = require("mongoose");
+const router = require("./routes");
 const port = process.env.PORT || 3000;
 
 // middleware
 app.use(morgan("dev"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
+app.use("/contacts", router);
 // schema
-const Schema = mongoose.Schema;
-const testSchema = new Schema({
-  name: String,
-});
+// const Schema = mongoose.Schema;
+// const testSchema = new Schema({
+//   name: String,
+// });
 
 // model
-const Test = mongoose.model("TestModel", testSchema);
+// const Test = mongoose.model("TestModel", testSchema);
 
 app.get("/", (req, res) => {
-  const test = new Test({
-    name: "Annur",
-  });
-
-  test
-    .save()
-    .then((t) => {
-      res.json(t);
-    })
-    .catch((e) => {
-      console.log(e);
-      res.status(500).json({
-        Error: "Error Occurred",
-      });
-    });
+  // const test = new Test({
+  //   name: "Annur",
+  // });
+  // test
+  //   .save()
+  //   .then((t) => {
+  //     res.json(t);
+  //   })
+  //   .catch((e) => {
+  //     console.log(e);
+  //     res.status(500).json({
+  //       Error: "Error Occurred",
+  //     });
+  //   });
 });
 
 mongoose
